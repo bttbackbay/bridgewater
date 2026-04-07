@@ -1,0 +1,160 @@
+{
+  "programs": [
+    {
+      "title": "Brazilian Jiu-Jitsu",
+      "icon": "icon-person",
+      "description": "From complete beginners to experienced practitioners, our BJJ classes offer comprehensive training in technique, self-defense, and competition preparation."
+    },
+    {
+      "title": "Kids BJJ",
+      "icon": "icon-person",
+      "description": "Building confidence, discipline, and fitness through martial arts. Our kids program teaches life skills alongside self-defense in a fun, safe environment for ages 5-12."
+    },
+    {
+      "title": "Muay Thai",
+      "icon": "icon-layers",
+      "description": "Develop striking skills, conditioning, and self-defense through the art of eight limbs. Classes suitable for all experience levels from beginner to advanced."
+    },
+    {
+      "title": "No-Gi Submission Grappling",
+      "icon": "icon-layers",
+      "description": "Focus on wrestling and grappling without the traditional gi. Perfect for MMA preparation or developing a well-rounded grappling game."
+    }
+  ],
+
+  "schedule": {
+    "days": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+    "slots": [
+      {
+        "time": "6:00 AM",
+        "classes": {
+          "Mon": { "name": "Adults BJJ NoGi", "belt": "purple", "level": "All Levels" },
+          "Wed": { "name": "Adults BJJ NoGi", "belt": "purple", "level": "All Levels" },
+          "Fri": { "name": "Adults BJJ NoGi", "belt": "purple", "level": "All Levels" }
+        }
+      },
+      {
+        "time": "9:00 AM",
+        "classes": {
+          "Sat": { "name": "Adults BJJ", "belt": "blue", "level": "All Levels" }
+        }
+      },
+      {
+        "time": "10:00 AM",
+        "classes": {
+          "Sat": { "name": "Kids BJJ", "belt": "white", "level": "Ages 5-12" },
+          "Sun": { "name": "Open Mat", "belt": "white", "level": "All Ranks" }
+        }
+      },
+      {
+        "time": "12:00 PM",
+        "classes": {
+          "Mon": { "name": "Adults Gi BJJ", "belt": "blue", "level": "All Levels" },
+          "Wed": { "name": "Adults Gi BJJ", "belt": "blue", "level": "All Levels" },
+          "Fri": { "name": "Adults Gi BJJ", "belt": "blue", "level": "All Levels" }
+        }
+      },
+      {
+        "time": "4:00 PM",
+        "classes": {
+          "Tue": { "name": "Kids BJJ", "belt": "white", "level": "Ages 5-12" },
+          "Thu": { "name": "Kids BJJ", "belt": "white", "level": "Ages 5-12" }
+        }
+      },
+      {
+        "time": "5:30 PM",
+        "classes": {
+          "Mon": { "name": "Muay Thai", "belt": "brown", "level": "All Levels" },
+          "Wed": { "name": "Muay Thai", "belt": "brown", "level": "All Levels" },
+          "Fri": { "name": "Muay Thai", "belt": "brown", "level": "All Levels" }
+        }
+      },
+      {
+        "time": "6:30 PM",
+        "classes": {
+          "Mon": { "name": "Adults Gi BJJ", "belt": "blue", "level": "All Levels" },
+          "Tue": { "name": "Adults NoGi BJJ", "belt": "purple", "level": "All Levels" },
+          "Wed": { "name": "Adults Gi BJJ", "belt": "blue", "level": "All Levels" },
+          "Thu": { "name": "Adults NoGi BJJ", "belt": "purple", "level": "All Levels" },
+          "Fri": { "name": "Adults Gi BJJ", "belt": "blue", "level": "All Levels" }
+        }
+      }
+    ]
+  },
+
+  "instructors": [
+    {
+      "name": "Professor TBD",
+      "rank": "Black Belt \u2022 Head Instructor",
+      "bio": "World-class Brazilian Jiu-Jitsu instruction coming soon. Check back for instructor profiles.",
+      "image": "https://res.cloudinary.com/display97/image/upload/f_auto,q_auto,w_400/7851/Brazilian-Jiu-Jitsu-278904.jpg",
+      "alt": "Instructor teaching Jiu-Jitsu technique"
+    },
+    {
+      "name": "Coach TBD",
+      "rank": "Program Director",
+      "bio": "Instructor profile coming soon. Contact us to learn more about our team.",
+      "image": "https://res.cloudinary.com/display97/image/upload/f_auto,q_auto,w_400/7851/Kids-Martial-Arts-278899.jpg",
+      "alt": "Instructor demonstrating technique"
+    },
+    {
+      "name": "Coach TBD",
+      "rank": "Kids Program Lead",
+      "bio": "Instructor profile coming soon. Contact us to learn more about our team.",
+      "image": "https://res.cloudinary.com/display97/image/upload/q_auto:eco,f_auto,w_400/7851/Get-the-Best-Brazilian-Jiu-Jitsu-Training-in-Boston-278898.png",
+      "alt": "Instructor working with students"
+    }
+  ],
+
+  "pricing": [
+    {
+      "title": "Fundamentals",
+      "price": "TBD",
+      "featured": false,
+      "features": [
+        "2 classes per week",
+        "Beginner-friendly",
+        "Grappling fundamentals"
+      ]
+    },
+    {
+      "title": "Unlimited",
+      "price": "TBD",
+      "featured": true,
+      "badge": "Most Popular",
+      "features": [
+        "Unlimited classes",
+        "All programs included",
+        "Open mat access",
+        "Competition training"
+      ]
+    },
+    {
+      "title": "Kids Program",
+      "price": "TBD",
+      "featured": false,
+      "features": [
+        "3 classes per week",
+        "Ages 5-12",
+        "Belt progression",
+        "Character development"
+      ]
+    }
+  ],
+
+  "contact": {
+    "location": "Bridgewater, MA 02324",
+    "phone": "(508) 555-1234",
+    "phoneHref": "tel:+15085551234",
+    "email": "info@bttbridgewater.com",
+    "hours": [
+      { "days": "Monday - Friday", "time": "6:00 AM - 9:00 PM" },
+      { "days": "Saturday", "time": "8:00 AM - 2:00 PM" },
+      { "days": "Sunday", "time": "Closed" }
+    ],
+    "social": {
+      "instagram": "https://instagram.com/bttbridgewater",
+      "facebook": "https://facebook.com/bttbridgewater"
+    }
+  }
+}

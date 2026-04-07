@@ -6,6 +6,11 @@
 (function() {
   'use strict';
 
+  // ===== Constants =====
+  var SCROLL_THRESHOLD = 50;
+  var NAV_OFFSET = 100;
+  var OBSERVER_ROOT_MARGIN = '-100px 0px -70% 0px';
+
   // ===== Mobile Navigation =====
   const hamburger = document.querySelector('.hamburger');
   const mobileMenu = document.querySelector('.mobile-menu');
@@ -124,7 +129,7 @@
 
   if (sections.length > 0 && navLinks.length > 0) {
     const observerOptions = {
-      rootMargin: '-100px 0px -70% 0px',
+      rootMargin: OBSERVER_ROOT_MARGIN,
       threshold: 0
     };
 
@@ -150,42 +155,58 @@
   const nav = document.querySelector('.nav');
   let lastScrollY = window.scrollY;
 
-  const sectionColors = {
-    'home': 'var(--color-deep-blue)',
-    'programs': 'var(--color-green-dark)',
-    'schedule': 'var(--color-deep-blue)',
-    'instructors': 'var(--color-deep-blue)',
-    'pricing': 'var(--color-deep-blue)',
-    'about': 'var(--color-blue-dark)',
-    'contact': 'var(--color-deep-blue)'
-  };
-
   window.addEventListener('scroll', function() {
     if (nav) {
-      if (window.scrollY > 50) {
-        nav.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
+      if (window.scrollY > SCROLL_THRESHOLD) {
         nav.classList.add('scrolled');
       } else {
-        nav.style.boxShadow = '0 2px 8px rgba(0,0,0,0.1)';
         nav.classList.remove('scrolled');
       }
 
       const sectionEls = document.querySelectorAll('section[id]');
-      let currentSection = 'home';
+      let currentColor = 'var(--color-deep-blue)';
 
       sectionEls.forEach(section => {
-        const sectionTop = section.offsetTop - 100;
+        const sectionTop = section.offsetTop - NAV_OFFSET;
         const sectionHeight = section.offsetHeight;
         if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-          currentSection = section.getAttribute('id');
+          currentColor = section.dataset.navColor || 'var(--color-deep-blue)';
         }
       });
 
-      const color = sectionColors[currentSection] || 'var(--color-deep-blue)';
-      nav.style.backgroundColor = color;
+      nav.style.backgroundColor = currentColor;
     }
     lastScrollY = window.scrollY;
   }, { passive: true });
+
+  // ===== Scroll Reveal =====
+  var revealEls = document.querySelectorAll('.section-title, .card, .instructor-card, .pricing-card, .why-btt-feature, .why-btt-image, .contact-layout, .schedule-table-container');
+  revealEls.forEach(function(el) { el.classList.add('reveal'); });
+
+  var revealObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { rootMargin: '0px 0px -60px 0px', threshold: 0.1 });
+
+  revealEls.forEach(function(el, i) {
+    el.style.transitionDelay = (i % 4) * 0.08 + 's';
+    revealObserver.observe(el);
+  });
+
+  document.addEventListener('contentRendered', function() {
+    var dynamicEls = document.querySelectorAll('.card, .instructor-card, .pricing-card');
+    dynamicEls.forEach(function(el, i) {
+      if (!el.classList.contains('reveal')) {
+        el.classList.add('reveal');
+        el.style.transitionDelay = (i % 4) * 0.1 + 's';
+        revealObserver.observe(el);
+      }
+    });
+  });
 
   // ===== Skip Link Enhancement =====
   const skipLink = document.querySelector('.skip-link');
